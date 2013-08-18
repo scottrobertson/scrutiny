@@ -1,8 +1,7 @@
 Scrutiny
 =======
 
-An agnostic monitoring system written in PHP. You can Scrutiny any service, and report to any other service.
-
+An agnostic monitoring system written in PHP. You can monitor any service, and report it anywhere (pushover.net for example) it if goes down. 
 
 ## Example
 
