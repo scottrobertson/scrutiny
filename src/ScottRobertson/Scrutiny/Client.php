@@ -9,11 +9,19 @@ class Client
 
     public function addService($service)
     {
+        if (! method_exists($service, 'getStatus')) {
+            throw new \Exception('Method: getStatus() does not exist');
+        }
+
         $this->services[] = $service;
     }
 
     public function addReporter($reporter)
     {
+        if (! method_exists($reporter, 'report')) {
+            throw new \Exception('Method: report() does not exist');
+        }
+
         $this->reporters[] = $reporter;
     }
 
