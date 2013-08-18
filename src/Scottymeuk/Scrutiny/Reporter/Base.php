@@ -4,6 +4,8 @@ namespace Scottymeuk\Scrutiny\Reporter;
 
 class Base
 {
+    private $subscriptions = array('down', 'recovery');
+
     public function getMessage($service, $hostname)
     {
         $message = '[' . $hostname . '] ';
@@ -20,5 +22,15 @@ class Base
     {
         $message = $this->getMessage($service, $hostname);
         $this->sender($message);
+    }
+
+    public function subscribed($event)
+    {
+        return in_array($event, $this->subscriptions);
+    }
+
+    public function subscribe($events)
+    {
+        $this->subscriptions = $events;
     }
 }

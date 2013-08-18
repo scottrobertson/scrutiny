@@ -11,7 +11,9 @@ class Base
     private $last_run = false;
 
     private $status = true;
+    private $event = 'up';
     private $count = 0;
+
 
     private $send_report = false;
 
@@ -24,24 +26,38 @@ class Base
     {
         $this->last_run = time();
 
-        // If the status has changed, then send a report
-        if ($this->status !== $status) {
-            $this->send_report = true;
-        } else {
-            $this->send_report = false;
-        }
-
-        if ($status === true) {
-            $this->count = 0;
-        }
-
-        // If there has been no change in the status since last time, then keep a counter
+        // If the same
         if ($status === $this->status) {
+
+            // Keep track of how long the status has not changed
             $this->count++;
+            $this->status = $status;
+
+            // Still down
+            if ($this->status === false) {
+                $this->event = 'down';
+            } else {
+                $this->event = 'up';
+            }
+        } else {
+
+            // Reset the count, something has changed
+            $this->count = 0;
+
+            // Down
+            if ($this->status === true && $status === false) {
+                $this->event = 'down';
+            }
+
+            // Recovery
+            if ($this->status === false && $status === true) {
+                $this->event = 'recovery';
+            }
+
+            $this->status = $status;
         }
 
-        $this->status = $status;
-        return $this->status;
+        return $this;
     }
 
     public function setName($name)
@@ -62,6 +78,11 @@ class Base
     public function setInterval($interval)
     {
         $this->interval = $interval;
+    }
+
+    public function getEvent()
+    {
+        return $this->event;
     }
 
     public function getDownMessage()

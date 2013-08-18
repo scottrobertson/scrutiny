@@ -10,6 +10,14 @@ class Pushover extends Base
 
     public function __construct($token, $user)
     {
+        $this->subscribe(
+            array(
+                'up',
+                'down',
+                'recovery'
+            )
+        );
+
         $this->token = $token;
         $this->user = $user;
         $this->pushover = new \Scottymeuk\Pushover\Client(

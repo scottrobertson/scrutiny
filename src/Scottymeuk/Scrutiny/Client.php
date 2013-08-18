@@ -28,10 +28,7 @@ class Client
         while (true) {
             foreach ($this->services as $service) {
                 if ($service->checkable()) {
-                    $service->getStatus();
-                    if ($service->sendReport()) {
-                        $this->report($service);
-                    }
+                    $this->report($service->getStatus());
                 }
             }
 
@@ -43,7 +40,9 @@ class Client
     public function report(\Scottymeuk\Scrutiny\Service\Base $service)
     {
         foreach ($this->reporters as $report) {
-            $report->report($service, $this->hostname);
+            if ($report->subscribed($service->getEvent())) {
+                $report->report($service, $this->hostname);
+            }
         }
     }
 }
