@@ -1,4 +1,18 @@
 {
+    "name": "scottrobertson/scrutiny",
+    "type": "library",
+    "description": "An agnostic monitoring system written in PHP. You can monitor any service, and report it anywhere (pushover.net for example) it if goes down.",
+    "keywords": ["monitor","service montitor"],
+    "homepage": "http://github.com/scottrobertson/scrutiny",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Scott Robertson",
+            "email": "scottymeuk@gmail.com",
+            "homepage": "http://scottrobertson.me",
+            "role": "Developer"
+        }
+    ],
     "require" : {
         "php" : ">=5.3.3",
         "scottymeuk/pushover" : "dev-master"
