@@ -5,7 +5,7 @@ An agnostic monitoring system written in PHP. You can monitor any Service, and r
 
 Each [Reporter](https://github.com/scottrobertson/scrutiny/wiki/Reporter) can subscribe to [Events](https://github.com/scottrobertson/scrutiny/wiki/Events) from [Services](https://github.com/scottrobertson/scrutiny/wiki/Service). There are 3 events: **up**, **down**, and **recovery**. Services can collect any meta data they want, and Reporters will have access to this data. This allows you to collect stats for instance.
 
-## Install
+### Install
 
 ```json
 {
@@ -44,5 +44,7 @@ $scrutiny->addReporter(
 );
 
 $scrutiny->watch(5);
-
 ```
+
+### Example Use case
+For example, if you wanted to monitor MySQL, you could setup the Pushover Reporter to subscribe to "down" events. This would mean that if MySQL went down, you would receive a push notification.
