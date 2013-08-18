@@ -12,7 +12,7 @@ An agnostic monitoring system written in PHP. You can Scrutiny any service, and 
 
 include dirname(__DIR__) . '/vendor/autoload.php';
 
-$Scrutiny = new \Scottymeuk\Scrutiny\Client(
+$scrutiny = new \Scottymeuk\Scrutiny\Client(
     'example.com',
     array(
         new \Scottymeuk\Scrutiny\Service\MySQL(array(
@@ -31,6 +31,6 @@ $Scrutiny = new \Scottymeuk\Scrutiny\Client(
     )
 );
 
-$Scrutiny->watch();
+$scrutiny->watch();
 
 ```
