@@ -4,7 +4,7 @@ namespace ScottRobertson\Scrutiny\Reporter;
 
 class Null extends Base
 {
-    public function report($service, $hostname)
+    public function report($service)
     {
         return true;
     }
