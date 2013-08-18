@@ -6,12 +6,6 @@ class Client
 {
     private $services = array();
     private $reporters = array();
-    private $hostname = null;
-
-    public function __construct($hostname)
-    {
-        $this->hostname = $hostname;
-    }
 
     public function addService($service)
     {
