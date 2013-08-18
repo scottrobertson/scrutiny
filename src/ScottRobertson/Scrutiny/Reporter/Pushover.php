@@ -24,7 +24,7 @@ class Pushover extends Base
 
     public function report($service)
     {
-        $this->pushover->title = $service->getStatusMessage();
+        $this->pushover->title = $service->getMessageFromEvent();
         $this->pushover->message = $service->getData('url') . ' returned ' . $service->getData('code');
         $this->pushover->timestamp = $service->getTime();
         $this->pushover->url = $service->getData('url');
