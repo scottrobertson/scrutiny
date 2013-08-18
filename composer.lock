@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "dbaa94c636658d04f4d3f9ea43775612",
+    "hash": "7cc698c5a6e511512acc63c1d9d46860",
     "packages": [
         {
             "name": "scottymeuk/pushover",
