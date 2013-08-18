@@ -1,7 +1,7 @@
-Monitor
+Scrutiny
 =======
 
-An agnostic monitoring system written in PHP. You can monitor any service, and report to any other service.
+An agnostic monitoring system written in PHP. You can Scrutiny any service, and report to any other service.
 
 
 ## Example
@@ -12,25 +12,25 @@ An agnostic monitoring system written in PHP. You can monitor any service, and r
 
 include dirname(__DIR__) . '/vendor/autoload.php';
 
-$monitor = new \Scottymeuk\Monitor\Client(
+$Scrutiny = new \Scottymeuk\Scrutiny\Client(
     'example.com',
     array(
-        new \Scottymeuk\Monitor\Service\MySQL(array(
+        new \Scottymeuk\Scrutiny\Service\MySQL(array(
             'host' => 'localhost',
             'username' => 'username',
             'password' => 'password',
             'port' => 3306
         )),
-        new \Scottymeuk\Monitor\Service\MongoDB(),
+        new \Scottymeuk\Scrutiny\Service\MongoDB(),
     ),
     array(
-        new \Scottymeuk\Monitor\Reporter\Pushover(
+        new \Scottymeuk\Scrutiny\Reporter\Pushover(
             'token',
             'user'
         )
     )
 );
 
-$monitor->watch();
+$Scrutiny->watch();
 
 ```
