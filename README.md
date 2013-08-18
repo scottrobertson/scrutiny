@@ -3,7 +3,7 @@ Scrutiny
 
 An agnostic monitoring system written in PHP. You can monitor any Service, and report it anywhere (pushover.net for example) it if goes down.
 
-Each Reporter can subscribe to [Events](https://github.com/scottrobertson/scrutiny/wiki/Events) from Services. There are 3 events: **up**, **down**, and **recovery**. Services can collect any meta data they want, and Reporters will have access to this data. This allows you to collect stats for instance.
+Each [Reporter](https://github.com/scottrobertson/scrutiny/wiki/Reporter) can subscribe to [Events](https://github.com/scottrobertson/scrutiny/wiki/Events) from [Services](https://github.com/scottrobertson/scrutiny/wiki/Service). There are 3 events: **up**, **down**, and **recovery**. Services can collect any meta data they want, and Reporters will have access to this data. This allows you to collect stats for instance.
 
 ## Install
 
