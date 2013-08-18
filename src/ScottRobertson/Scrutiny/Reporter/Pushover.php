@@ -15,7 +15,7 @@ class Pushover extends Base
 
         $this->token = $token;
         $this->user = $user;
-        $this->pushover = new \scottymeuk\Pushover\Client(
+        $this->pushover = new \Scottymeuk\Pushover\Client(
             array(
                 'token' => $this->token
             )
