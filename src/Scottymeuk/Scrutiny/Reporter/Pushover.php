@@ -12,7 +12,6 @@ class Pushover extends Base
     {
         $this->subscribe(
             array(
-                'up',
                 'down',
                 'recovery'
             )
