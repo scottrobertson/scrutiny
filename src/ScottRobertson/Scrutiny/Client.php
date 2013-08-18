@@ -52,7 +52,7 @@ class Client
     {
         foreach ($this->reporters as $report) {
             if ($report->subscribed($service->getEvent())) {
-                $report->report($service, $this->hostname);
+                $report->report($service);
             }
         }
     }
