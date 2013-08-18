@@ -5,7 +5,15 @@ An agnostic monitoring system written in PHP. You can monitor any Service, and r
 
 Each Reporter can subscribe to events from Services. There are 3 events: **up**, **down**, and **recovery**. Services can collect any meta data they want, and Reporters will have access to this data. This allows you to collect stats for instance.
 
-## Example
+## Install
+
+```json
+{
+    "require" : {
+        "scottrobertson/scrutiny" : "dev-master"
+    }
+}
+```
 
 ```php
 
