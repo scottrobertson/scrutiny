@@ -62,7 +62,7 @@ class Base
             $this->count = 0;
 
             // Down
-            if ($this->status === true && $status === false) {
+            if ($status === false) {
                 $this->event = 'down';
             }
 
@@ -73,8 +73,6 @@ class Base
 
             $this->status = $status;
         }
-
-        return $this;
     }
 
     public function setName($name)
