@@ -12,6 +12,9 @@ class Url extends Base
 
         $this->setName('Url');
         $this->setInterval(5);
+
+        // Pass some meta data through
+        $this->setData('url', $url);
     }
 
     public function getStatus()
@@ -32,9 +35,11 @@ class Url extends Base
         );
 
         $response = curl_exec($curl);
-        $header = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
         curl_close($curl);
-        return $header < 400;
+
+        $this->setData('code', $code);
+        return $code < 400;
     }
 }

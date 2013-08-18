@@ -8,14 +8,10 @@ class Pushover extends Base
     private $user;
     private $pushover;
 
-    public function __construct($token, $user)
+    public function __construct($token, $user, array $subscribe = array('down', 'recovery'))
     {
-        $this->subscribe(
-            array(
-                'down',
-                'recovery'
-            )
-        );
+        // Subscribe to events
+        $this->subscribe($subscribe);
 
         $this->token = $token;
         $this->user = $user;
@@ -28,9 +24,10 @@ class Pushover extends Base
 
     public function report($service, $hostname)
     {
-        $message = $this->getMessage($service, $hostname);
-
-        $this->pushover->message = $message;
+        $this->pushover->title = $service->getStatusMessage();
+        $this->pushover->message = $service->getData('url') . ' returned ' . $service->getData('code');
+        $this->pushover->timestamp = $service->getTime();
+        $this->pushover->url = $service->getData('url');
         $this->pushover->push($this->user);
     }
 }

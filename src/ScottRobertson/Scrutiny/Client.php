@@ -30,7 +30,6 @@ class Client
         }
     }
 
-
     public function report(\ScottRobertson\Scrutiny\Service\Base $service)
     {
         foreach ($this->reporters as $report) {
