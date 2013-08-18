@@ -10,7 +10,7 @@ An agnostic monitoring system written in PHP. You can Scrutiny any service, and 
 
 <?php
 
-include dirname(__DIR__) . '/vendor/autoload.php';
+include __DIR__ . '/vendor/autoload.php';
 
 $scrutiny = new \Scottymeuk\Scrutiny\Client(
     'example.com',
@@ -31,6 +31,6 @@ $scrutiny = new \Scottymeuk\Scrutiny\Client(
     )
 );
 
-$scrutiny->watch();
+$scrutiny->watch(5);
 
 ```
