@@ -8,11 +8,19 @@ class Client
     private $reporters = array();
     private $hostname = null;
 
-    public function __construct($hostname, Array $services, Array $reporters)
+    public function __construct($hostname)
     {
-        $this->services = $services;
-        $this->reporters = $reporters;
         $this->hostname = $hostname;
+    }
+
+    public function addService($service)
+    {
+        $this->services[] = $service;
+    }
+
+    public function addReporter($reporter)
+    {
+        $this->reporters[] = $reporter;
     }
 
     public function watch($global_interval = 20)
