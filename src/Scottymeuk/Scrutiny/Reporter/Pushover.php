@@ -27,8 +27,10 @@ class Pushover extends Base
         );
     }
 
-    public function sender($message)
+    public function report($service, $hostname)
     {
+        $message = $this->getMessage($service, $hostname);
+
         $this->pushover->message = $message;
         $this->pushover->push($this->user);
     }

@@ -18,12 +18,6 @@ class Base
         return $message;
     }
 
-    public function report($service, $hostname)
-    {
-        $message = $this->getMessage($service, $hostname);
-        $this->sender($message);
-    }
-
     public function subscribed($event)
     {
         return in_array($event, $this->subscriptions);
