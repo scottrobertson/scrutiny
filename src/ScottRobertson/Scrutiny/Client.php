@@ -40,7 +40,8 @@ class Client
         while (true) {
             foreach ($this->services as $service) {
                 if ($service->checkable()) {
-                    $this->report($service->getStatus());
+                    $service->getStatus();
+                    $this->report($service);
                 }
             }
 
@@ -52,7 +53,7 @@ class Client
     {
         foreach ($this->reporters as $report) {
             if ($report->subscribed($service->getEvent())) {
-                $report->report($service, $this->hostname);
+                $report->report($service);
             }
         }
     }

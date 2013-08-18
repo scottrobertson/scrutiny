@@ -4,21 +4,21 @@ namespace ScottRobertson\Scrutiny\Service;
 
 class Base
 {
-    private $name = null;
-    private $messages = array();
+    protected $name = null;
+    protected $messages = array();
 
-    private $interval = 5;
-    private $time = false;
+    protected $interval = 5;
+    protected $time = false;
 
-    private $status = true;
-    private $status_message = null;
+    protected $status = true;
+    protected $status_message = null;
 
-    private $event = 'up';
-    private $count = 0;
+    protected $event = 'up';
+    protected $count = 0;
 
-    private $data = array();
+    protected $data = array();
 
-    private $send_report = false;
+    protected $send_report = false;
 
     public function checkable()
     {

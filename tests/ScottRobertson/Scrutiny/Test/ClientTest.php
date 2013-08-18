@@ -15,7 +15,7 @@ class ClientTest extends TestCase
     public function testAddService()
     {
         $client = new \ScottRobertson\Scrutiny\Client();
-        $client->addService(new \ScottRobertson\Scrutiny\Service\Url('http://google.com'));
+        $client->addService(new \ScottRobertson\Scrutiny\Service\Http('http://google.com'));
         $this->assertCount(1, $client->getServices());
     }
 
