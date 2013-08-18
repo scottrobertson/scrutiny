@@ -11,6 +11,9 @@
         <blacklist>
             <directory suffix=".php">vendor/</directory>
         </blacklist>
+        <blacklist>
+            <directory suffix=".php">tests/ScottRobertson/Scrutiny/Mock/</directory>
+        </blacklist>
         <whitelist>
             <directory suffix=".php">src/</directory>
         </whitelist>
