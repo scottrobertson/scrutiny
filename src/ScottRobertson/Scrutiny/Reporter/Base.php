@@ -1,6 +1,6 @@
 <?php
 
-namespace Scottymeuk\Scrutiny\Reporter;
+namespace ScottRobertson\Scrutiny\Reporter;
 
 class Base
 {

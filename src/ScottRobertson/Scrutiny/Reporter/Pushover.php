@@ -1,6 +1,6 @@
 <?php
 
-namespace Scottymeuk\Scrutiny\Reporter;
+namespace ScottRobertson\Scrutiny\Reporter;
 
 class Pushover extends Base
 {
@@ -19,7 +19,7 @@ class Pushover extends Base
 
         $this->token = $token;
         $this->user = $user;
-        $this->pushover = new \Scottymeuk\Pushover\Client(
+        $this->pushover = new \scottymeuk\Pushover\Client(
             array(
                 'token' => $this->token
             )

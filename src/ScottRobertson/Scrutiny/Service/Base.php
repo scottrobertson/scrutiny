@@ -1,6 +1,6 @@
 <?php
 
-namespace Scottymeuk\Scrutiny\Service;
+namespace ScottRobertson\Scrutiny\Service;
 
 class Base
 {

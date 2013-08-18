@@ -1,6 +1,6 @@
 <?php
 
-namespace Scottymeuk\Scrutiny;
+namespace ScottRobertson\Scrutiny;
 
 class Client
 {
@@ -37,7 +37,7 @@ class Client
     }
 
 
-    public function report(\Scottymeuk\Scrutiny\Service\Base $service)
+    public function report(\ScottRobertson\Scrutiny\Service\Base $service)
     {
         foreach ($this->reporters as $report) {
             if ($report->subscribed($service->getEvent())) {

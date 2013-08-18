@@ -11,13 +11,13 @@ Each Reporter can subscribe to events from Services. There are 3 events: **up**,
 
 <?php
 include __DIR__ . '/vendor/autoload.php';
-$scrutiny = new \Scottymeuk\Scrutiny\Client('example.com');
+$scrutiny = new \ScottRobertson\Scrutiny\Client('example.com');
 
 // Monitor google.com, MySQL and MongoDB's status
-$scrutiny->addService(new \Scottymeuk\Scrutiny\Service\Url('http://www.google.com'));
-$scrutiny->addService(new \Scottymeuk\Scrutiny\Service\MongoDB());
+$scrutiny->addService(new \ScottRobertson\Scrutiny\Service\Url('http://www.google.com'));
+$scrutiny->addService(new \ScottRobertson\Scrutiny\Service\MongoDB());
 $scrutiny->addService(
-    new \Scottymeuk\Scrutiny\Service\MySQL(
+    new \ScottRobertson\Scrutiny\Service\MySQL(
         array(
             'host' => 'localhost',
             'username' => 'username',
@@ -29,7 +29,7 @@ $scrutiny->addService(
 
 // Send notifications to pushover.net
 $scrutiny->addReporter(
-    new \Scottymeuk\Scrutiny\Reporter\Pushover(
+    new \ScottRobertson\Scrutiny\Reporter\Pushover(
         'token',
         'user'
     )
