@@ -22,6 +22,7 @@ $scrutiny = new \Scottymeuk\Scrutiny\Client(
             'port' => 3306
         )),
         new \Scottymeuk\Scrutiny\Service\MongoDB(),
+        new \Scottymeuk\Scrutiny\Service\Url('http://www.google.com')
     ),
     array(
         new \Scottymeuk\Scrutiny\Reporter\Pushover(
