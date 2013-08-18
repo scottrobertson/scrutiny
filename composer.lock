@@ -1,0 +1,72 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "dbaa94c636658d04f4d3f9ea43775612",
+    "packages": [
+        {
+            "name": "scottymeuk/pushover",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/scottymeuk/pushover.git",
+                "reference": "98758909791bcdc96447784d3769610ad6fc97e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/scottymeuk/pushover/zipball/98758909791bcdc96447784d3769610ad6fc97e2",
+                "reference": "98758909791bcdc96447784d3769610ad6fc97e2",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": [
+                        "src",
+                        "tests"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Scott Robertson",
+                    "email": "scottymeuk@gmail.com",
+                    "homepage": "http://scottrobertson.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple pushover.net library",
+            "homepage": "http://github.com/scottymeuk/pushover",
+            "keywords": [
+                "push notifications",
+                "pushover"
+            ],
+            "time": "2013-08-17 08:37:14"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "scottymeuk/pushover": 20
+    },
+    "platform": {
+        "php": ">=5.3.3"
+    },
+    "platform-dev": [
+
+    ]
+}

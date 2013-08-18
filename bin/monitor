@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+include dirname(__DIR__) . '/vendor/autoload.php';
+
+$monitor = new \Scottymeuk\Monitor\Client(
+    'example.com',
+    array(
+        new \Scottymeuk\Monitor\Service\MySQL(array(
+            'host' => 'localhost',
+            'username' => 'username',
+            'password' => 'password',
+            'port' => 3306
+        )),
+        new \Scottymeuk\Monitor\Service\MongoDB(),
+    ),
+    array(
+        new \Scottymeuk\Monitor\Reporter\Pushover(
+            'token',
+            'user'
+        )
+    )
+);
+
+$monitor->watch();

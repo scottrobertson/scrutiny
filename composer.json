@@ -1,0 +1,11 @@
+{
+    "require" : {
+        "php" : ">=5.3.3",
+        "scottymeuk/pushover" : "dev-master"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "" : "src"
+        }
+    }
+}
