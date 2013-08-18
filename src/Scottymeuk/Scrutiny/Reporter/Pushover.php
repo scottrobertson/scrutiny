@@ -1,6 +1,6 @@
 <?php
 
-namespace Scottymeuk\Monitor\Reporter;
+namespace Scottymeuk\Scrutiny\Reporter;
 
 class Pushover extends Base
 {

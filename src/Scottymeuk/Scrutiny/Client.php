@@ -1,6 +1,6 @@
 <?php
 
-namespace Scottymeuk\Monitor;
+namespace Scottymeuk\Scrutiny;
 
 class Client
 {
@@ -32,7 +32,7 @@ class Client
     }
 
 
-    public function report(\Scottymeuk\Monitor\Service\Base $service)
+    public function report(\Scottymeuk\Scrutiny\Service\Base $service)
     {
         foreach ($this->reporters as $report) {
             $report->report($service, $this->hostname);

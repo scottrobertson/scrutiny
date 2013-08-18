@@ -3,23 +3,23 @@
 
 include dirname(__DIR__) . '/vendor/autoload.php';
 
-$monitor = new \Scottymeuk\Monitor\Client(
+$scrutiny = new \Scottymeuk\Scrutiny\Client(
     'example.com',
     array(
-        new \Scottymeuk\Monitor\Service\MySQL(array(
+        new \Scottymeuk\Scrutiny\Service\MySQL(array(
             'host' => 'localhost',
             'username' => 'username',
             'password' => 'password',
             'port' => 3306
         )),
-        new \Scottymeuk\Monitor\Service\MongoDB(),
+        new \Scottymeuk\Scrutiny\Service\MongoDB(),
     ),
     array(
-        new \Scottymeuk\Monitor\Reporter\Pushover(
+        new \Scottymeuk\Scrutiny\Reporter\Pushover(
             'token',
             'user'
         )
     )
 );
 
-$monitor->watch();
+$scrutiny->watch();
