@@ -4,14 +4,23 @@ namespace ScottRobertson\Scrutiny\Service;
 
 class MongoDB extends Base
 {
-    public function __construct()
+    private $connection_string;
+    public function __construct($connection_string = null)
     {
+        $this->connection_string = $connection_string;
+
         $this->setName('MongoDB');
         $this->setInterval(5);
     }
 
     public function getStatus()
     {
-        return $this->setStatus(true);
+        try {
+            $mongo = new \MongoClient($this->connection_string);
+        } catch (\Exception $e) {
+            return $this->setStatus(false);
+        }
+
+        return $this->setStatus($mongo->connected);
     }
 }
