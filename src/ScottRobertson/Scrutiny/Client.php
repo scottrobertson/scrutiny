@@ -17,6 +17,16 @@ class Client
         $this->reporters[] = $reporter;
     }
 
+    public function getServices()
+    {
+        return $this->services;
+    }
+
+    public function getReporters()
+    {
+        return $this->reporters;
+    }
+
     public function watch($global_interval = 20)
     {
         while (true) {
