@@ -28,7 +28,7 @@ include __DIR__ . '/vendor/autoload.php';
 $scrutiny = new \ScottRobertson\Scrutiny\Client('example.com');
 
 // Monitor google.com, MySQL and MongoDB's status
-$scrutiny->addService(new \ScottRobertson\Scrutiny\Service\Url('http://www.google.com'));
+$scrutiny->addService(new \ScottRobertson\Scrutiny\Service\Http('http://www.google.com'));
 $scrutiny->addService(new \ScottRobertson\Scrutiny\Service\MongoDB());
 $scrutiny->addService(
     new \ScottRobertson\Scrutiny\Service\MySQL(
@@ -55,9 +55,9 @@ $scrutiny->watch(5);
 ### Current Services
  - MySQL
  - MongoDB
- - Url (Checking if a website is available)
+ - Http (Checking if a website is available)
 
-### Current Reporters 
+### Current Reporters
  - Pushover.net
 
 ### Example Use case

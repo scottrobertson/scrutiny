@@ -2,7 +2,7 @@
 
 namespace ScottRobertson\Scrutiny\Service;
 
-class Url extends Base
+class Http extends Base
 {
     private $url = array();
 
@@ -10,7 +10,7 @@ class Url extends Base
     {
         $this->url = $url;
 
-        $this->setName('Url');
+        $this->setName('HTTP');
         $this->setInterval(5);
 
         // Pass some meta data through
@@ -19,7 +19,9 @@ class Url extends Base
 
     public function getStatus()
     {
-        return $this->setStatus($this->isOnline($this->url));
+        $online = $this->isOnline($this->url);
+        $this->setStatus($online);
+        return $this->status;
     }
 
     public function isOnline($url)
@@ -28,7 +30,7 @@ class Url extends Base
         curl_setopt_array(
             $curl,
             array(
-                CURLOPT_CONNECTTIMEOUT => 10,
+                CURLOPT_CONNECTTIMEOUT => 2,
                 CURLOPT_HEADER => true,
                 CURLOPT_RETURNTRANSFER => true
             )
@@ -40,6 +42,6 @@ class Url extends Base
         curl_close($curl);
 
         $this->setData('code', $code);
-        return $code < 400;
+        return preg_match('/^[23]{1}[\d]{2}$/', $code);
     }
 }

@@ -40,7 +40,8 @@ class Client
         while (true) {
             foreach ($this->services as $service) {
                 if ($service->checkable()) {
-                    $this->report($service->getStatus());
+                    $service->getStatus();
+                    $this->report($service);
                 }
             }
 
