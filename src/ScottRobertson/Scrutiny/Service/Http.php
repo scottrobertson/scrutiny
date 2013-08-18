@@ -42,6 +42,6 @@ class Http extends Base
         curl_close($curl);
 
         $this->setData('code', $code);
-        return preg_match('/^[23]{1}[\d]{2}$/', $code);
+        return (bool) preg_match('/^[23]{1}[\d]{2}$/', $code);
     }
 }
