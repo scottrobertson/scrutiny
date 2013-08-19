@@ -29,7 +29,13 @@ $scrutiny = new \ScottRobertson\Scrutiny\Client('example.com');
 
 // Setup Services to monitor
 $scrutiny->addService(new \ScottRobertson\Scrutiny\Service\Http('http://example.com'));
-$scrutiny->addService(new \ScottRobertson\Scrutiny\Service\MongoDB());
+
+// Set options on a service
+$mongodb = new \ScottRobertson\Scrutiny\Service\MongoDB();
+$mongodb->setName('MongoDB');
+$mongodb->setInterval(20);
+$mongodb->setDownMessage('ER MER GERD MORGOR ER DORN');
+$scrutiny->addService($mongodb);
 
 // Setup Reporters
 $scrutiny->addReporter(new \ScottRobertson\Scrutiny\Reporter\Post('http://api.example.com'));
