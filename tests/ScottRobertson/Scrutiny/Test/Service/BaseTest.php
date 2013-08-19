@@ -131,12 +131,6 @@ class BaseTest extends \ScottRobertson\Scrutiny\Test\TestCase
         $this->assertEquals('testing', $base->getMessageFromEvent());
     }
 
-    public function testGetStatusMessage()
-    {
-        $base = new \ScottRobertson\Scrutiny\Service\Base();
-        $this->assertTrue(is_string($base->getStatusMessage()));
-    }
-
     public function testGetRecoveryMessage()
     {
         $base = new \ScottRobertson\Scrutiny\Service\Base();
