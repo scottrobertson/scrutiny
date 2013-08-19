@@ -27,21 +27,12 @@ Each [Reporter](https://github.com/scottrobertson/scrutiny/wiki/Reporter) can su
 include __DIR__ . '/vendor/autoload.php';
 $scrutiny = new \ScottRobertson\Scrutiny\Client('example.com');
 
-// Monitor google.com, MySQL and MongoDB's status
-$scrutiny->addService(new \ScottRobertson\Scrutiny\Service\Http('http://www.google.com'));
+// Setup Services to monitor
+$scrutiny->addService(new \ScottRobertson\Scrutiny\Service\Http('http://example.com'));
 $scrutiny->addService(new \ScottRobertson\Scrutiny\Service\MongoDB());
-$scrutiny->addService(
-    new \ScottRobertson\Scrutiny\Service\MySQL(
-        array(
-            'host' => 'localhost',
-            'username' => 'username',
-            'password' => 'password',
-            'port' => 3306
-        )
-    )
-);
 
-// Send notifications to pushover.net
+// Setup Reporters
+$scrutiny->addReporter(new \ScottRobertson\Scrutiny\Reporter\Post('http://api.example.com'));
 $scrutiny->addReporter(
     new \ScottRobertson\Scrutiny\Reporter\Pushover(
         'token',
@@ -59,6 +50,7 @@ $scrutiny->watch(5);
 
 ### Current Reporters
  - Pushover.net
+ - Post
 
 ### Example Use case
 For example, if you wanted to monitor MySQL, you could setup the Pushover Reporter to subscribe to "down" events. This would mean that if MySQL went down, you would receive a push notification.
