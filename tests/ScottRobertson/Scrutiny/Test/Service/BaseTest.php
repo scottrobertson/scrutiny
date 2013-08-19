@@ -71,7 +71,8 @@ class BaseTest extends \ScottRobertson\Scrutiny\Test\TestCase
     public function testGetInterval()
     {
         $base = new \ScottRobertson\Scrutiny\Service\Base();
-        $this->assertEquals(5, $base->getInterval());
+        $base->setInterval(24);
+        $this->assertEquals(24, $base->getInterval());
     }
 
     public function testGetStatus()
