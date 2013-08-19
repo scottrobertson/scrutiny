@@ -20,7 +20,7 @@ class Base
      * How often should we check this service
      * @var integer
      */
-    protected $interval = 5;
+    protected $interval = 20;
 
     /**
      * When did we last check this service?
