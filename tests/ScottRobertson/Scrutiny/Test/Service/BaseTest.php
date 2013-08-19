@@ -16,22 +16,16 @@ class BaseTest extends \ScottRobertson\Scrutiny\Test\TestCase
     {
         $base = new \ScottRobertson\Scrutiny\Service\Base();
 
-        $status = $base->setStatus();
-        $this->assertTrue(property_exists($status, 'name'));
-        $this->assertTrue(property_exists($status, 'event'));
-        $this->assertTrue(property_exists($status, 'count'));
-        $this->assertEquals('down', $status->getEvent());
+        $base->setStatus();
+        $this->assertEquals('down', $base->getEvent());
     }
 
     public function testSetStatusUp()
     {
         $base = new \ScottRobertson\Scrutiny\Service\Base();
 
-        $status = $base->setStatus(true);
-        $this->assertTrue(property_exists($status, 'name'));
-        $this->assertTrue(property_exists($status, 'event'));
-        $this->assertTrue(property_exists($status, 'count'));
-        $this->assertEquals('up', $status->getEvent());
+        $base->setStatus(true);
+        $this->assertEquals('up', $base->getEvent());
     }
 
     public function testSetStatusStillDown()
@@ -40,13 +34,10 @@ class BaseTest extends \ScottRobertson\Scrutiny\Test\TestCase
 
         // Send the 'down' event twice
         $base->setStatus(false);
-        $status = $base->setStatus(false);
+        $base->setStatus(false);
 
-        $this->assertTrue(property_exists($status, 'name'));
-        $this->assertTrue(property_exists($status, 'event'));
-        $this->assertTrue(property_exists($status, 'count'));
-        $this->assertEquals('down', $status->getEvent());
-        $this->assertEquals(1, $status->getCount());
+        $this->assertEquals('down', $base->getEvent());
+        $this->assertEquals(1, $base->getCount());
     }
 
     public function testSetStatusRecovery()
@@ -55,12 +46,8 @@ class BaseTest extends \ScottRobertson\Scrutiny\Test\TestCase
 
         // Send the 'down' event twice
         $base->setStatus(false);
-        $status = $base->setStatus(true);
-
-        $this->assertTrue(property_exists($status, 'name'));
-        $this->assertTrue(property_exists($status, 'event'));
-        $this->assertTrue(property_exists($status, 'count'));
-        $this->assertEquals('recovery', $status->getEvent());
+        $base->setStatus(true);
+        $this->assertEquals('recovery', $base->getEvent());
     }
 
     public function testCheckable()
