@@ -25,7 +25,7 @@ Each [Reporter](https://github.com/scottrobertson/scrutiny/wiki/Reporter) can su
 
 <?php
 include __DIR__ . '/vendor/autoload.php';
-$scrutiny = new \ScottRobertson\Scrutiny\Client('example.com');
+$scrutiny = new \ScottRobertson\Scrutiny\Client();
 
 // Setup Services to monitor
 $scrutiny->addService(new \ScottRobertson\Scrutiny\Service\Http('http://example.com'));
