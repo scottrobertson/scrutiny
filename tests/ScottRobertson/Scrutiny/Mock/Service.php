@@ -14,7 +14,7 @@ class Service
         return time();
     }
 
-    public function getStatusMessage()
+    public function getMessageFromEvent()
     {
         return 'up';
     }
