@@ -18,4 +18,9 @@ class Service
     {
         return 'up';
     }
+
+    public function getName()
+    {
+        return 'service';
+    }
 }
