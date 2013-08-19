@@ -93,12 +93,6 @@ class BaseTest extends \ScottRobertson\Scrutiny\Test\TestCase
         $this->assertTrue($base->getStatus());
     }
 
-    public function testSendReport()
-    {
-        $base = new \ScottRobertson\Scrutiny\Service\Base();
-        $this->assertFalse($base->sendReport());
-    }
-
     public function testGetTime()
     {
         $base = new \ScottRobertson\Scrutiny\Service\Base();
