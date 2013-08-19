@@ -274,4 +274,13 @@ class Base
     {
         return $this->time;
     }
+
+    /**
+     * Return the name of the service
+     * @return int
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 }
