@@ -35,7 +35,7 @@ class Client
         return $this->reporters;
     }
 
-    public function watch($global_interval = 20)
+    public function watch()
     {
         while (true) {
             foreach ($this->services as $service) {
@@ -45,7 +45,7 @@ class Client
                 }
             }
 
-            sleep($global_interval);
+            sleep(1);
         }
     }
 

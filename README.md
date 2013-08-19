@@ -46,7 +46,7 @@ $scrutiny->addReporter(
     )
 );
 
-$scrutiny->watch(5);
+$scrutiny->watch();
 ```
 
 ### Current Services
