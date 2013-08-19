@@ -8,10 +8,7 @@ class MySQL extends Base
     public function __construct(Array $options)
     {
         $this->options = $options;
-
         $this->setName('MySQL');
-        $this->setDownMessage('Ermahgerd merserquell ers dern');
-        $this->setInterval(5);
     }
 
     public function getStatus()

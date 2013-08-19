@@ -9,12 +9,8 @@ class Http extends Base
     public function __construct($url)
     {
         $this->url = $url;
-
         $this->setName('HTTP');
-        $this->setInterval(5);
-
-        // Pass some meta data through
-        $this->setData('url', $url);
+        $this->setData('url', $this->url);
     }
 
     public function getStatus()

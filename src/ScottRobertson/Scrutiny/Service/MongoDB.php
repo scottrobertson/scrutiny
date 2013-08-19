@@ -8,9 +8,7 @@ class MongoDB extends Base
     public function __construct($connection_string = null)
     {
         $this->connection_string = $connection_string;
-
         $this->setName('MongoDB');
-        $this->setInterval(5);
     }
 
     public function getStatus()
