@@ -4,8 +4,8 @@ namespace ScottRobertson\Scrutiny\Reporter;
 
 class Pushover extends Base
 {
-    private $token;
-    private $user;
+    protected $token;
+    protected $user;
     public $pushover;
 
     public function __construct($token, $user, array $subscribe = array('down', 'recovery'))

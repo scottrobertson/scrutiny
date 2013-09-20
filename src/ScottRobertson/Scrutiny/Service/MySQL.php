@@ -4,7 +4,7 @@ namespace ScottRobertson\Scrutiny\Service;
 
 class MySQL extends Base
 {
-    private $options;
+    protected $options;
     public function __construct(Array $options)
     {
         $this->options = $options;

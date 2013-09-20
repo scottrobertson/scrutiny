@@ -4,7 +4,7 @@ namespace ScottRobertson\Scrutiny\Service;
 
 class MongoDB extends Base
 {
-    private $connection_string;
+    protected $connection_string;
     public function __construct($connection_string = null)
     {
         $this->connection_string = $connection_string;

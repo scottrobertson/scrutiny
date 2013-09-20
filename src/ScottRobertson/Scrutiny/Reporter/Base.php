@@ -8,7 +8,7 @@ class Base
      * Holds an array of what events the reporter is subscribed to
      * @var array
      */
-    private $subscriptions = array(
+    protected $subscriptions = array(
         'down',
         'recovery'
     );

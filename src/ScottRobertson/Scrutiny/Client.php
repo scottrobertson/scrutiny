@@ -4,8 +4,8 @@ namespace ScottRobertson\Scrutiny;
 
 class Client
 {
-    private $services = array();
-    private $reporters = array();
+    protected $services = array();
+    protected $reporters = array();
 
     public function addService($service)
     {

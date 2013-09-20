@@ -4,8 +4,7 @@ namespace ScottRobertson\Scrutiny\Service;
 
 class Http extends Base
 {
-    private $url = array();
-
+    protected $url = array();
     public function __construct($url)
     {
         $this->url = $url;
