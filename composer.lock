@@ -10,13 +10,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/scottymeuk/pushover.git",
-                "reference": "98758909791bcdc96447784d3769610ad6fc97e2"
+                "url": "https://github.com/scottrobertson/pushover.git",
+                "reference": "c7eeae1d50ef93b85c6bb6edb99e4b0dd5251e00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scottymeuk/pushover/zipball/98758909791bcdc96447784d3769610ad6fc97e2",
-                "reference": "98758909791bcdc96447784d3769610ad6fc97e2",
+                "url": "https://api.github.com/repos/scottrobertson/pushover/zipball/c7eeae1d50ef93b85c6bb6edb99e4b0dd5251e00",
+                "reference": "c7eeae1d50ef93b85c6bb6edb99e4b0dd5251e00",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 "push notifications",
                 "pushover"
             ],
-            "time": "2013-08-17 08:37:14"
+            "time": "2013-08-30 06:10:28"
         }
     ],
     "packages-dev": [
