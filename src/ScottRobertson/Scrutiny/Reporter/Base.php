@@ -25,9 +25,9 @@ class Base
 
     /**
      * Subscribe the reporter to an event
-     * @param  string $events
+     * @param  array $events
      */
-    public function subscribe($events)
+    public function subscribe(array $events)
     {
         $this->subscriptions = $events;
     }
