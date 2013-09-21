@@ -19,7 +19,7 @@ class Http extends Base
         return $this->status;
     }
 
-    public function isOnline($url)
+    protected function isOnline($url)
     {
         $curl = curl_init($url);
         curl_setopt_array(
