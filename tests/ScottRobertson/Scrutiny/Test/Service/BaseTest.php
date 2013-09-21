@@ -174,5 +174,6 @@ class BaseTest extends \ScottRobertson\Scrutiny\Test\TestCase
     {
         $base = new \ScottRobertson\Scrutiny\Service\Base();
         $this->assertTrue(is_array($base->getData()));
+        $this->assertCount(0, $base->getData()); // Should not contain any data
     }
 }
