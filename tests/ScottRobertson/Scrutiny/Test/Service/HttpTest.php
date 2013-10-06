@@ -11,7 +11,5 @@ class HttpTest extends \ScottRobertson\Scrutiny\Test\TestCase
         $this->assertTrue(method_exists($http, 'checkable'));
         $this->assertTrue(method_exists($http, 'getStatus'));
         $this->assertTrue(method_exists($http, 'isOnline'));
-
-        $this->assertTrue($http->getStatus());
     }
 }
