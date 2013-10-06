@@ -31,9 +31,8 @@ class Http extends Base
             )
         );
 
-        $response = curl_exec($curl);
+        curl_exec($curl);
         $code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
         curl_close($curl);
 
         $this->setData('code', $code);
