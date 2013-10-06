@@ -14,14 +14,14 @@ class Http extends Base
 
     public function getStatus()
     {
-        $online = $this->isOnline($this->url);
+        $online = $this->isOnline();
         $this->setStatus($online);
         return $this->status;
     }
 
-    protected function isOnline($url)
+    protected function isOnline()
     {
-        $curl = curl_init($url);
+        $curl = curl_init($this->url);
         curl_setopt_array(
             $curl,
             array(
