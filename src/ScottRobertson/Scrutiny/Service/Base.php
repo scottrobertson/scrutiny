@@ -175,7 +175,7 @@ class Base
 
     /**
      * Return the meta data
-     * @param  string $key
+     * @param  string|bool $key
      * @return array|string
      */
     public function getData($key = false)

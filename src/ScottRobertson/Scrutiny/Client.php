@@ -19,6 +19,7 @@ class Client
     /**
      * Add a service to our internal array
      * @param Object $service
+     * @throws \Exception
      */
     public function addService($service)
     {
@@ -32,6 +33,7 @@ class Client
     /**
      * Add a reporter to our internal array
      * @param Object $reporter
+     * @throws \Exception
      */
     public function addReporter($reporter)
     {
@@ -79,7 +81,7 @@ class Client
 
     /**
      * Report the status of our service to each of our reporters
-     * @param  ScottRobertsonScrutinyServiceBase $service
+     * @param  \ScottRobertson\Scrutiny\Service\Base $service
      */
     public function report(\ScottRobertson\Scrutiny\Service\Base $service)
     {
