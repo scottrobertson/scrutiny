@@ -2,9 +2,9 @@
 
 namespace ScottRobertson\Scrutiny\Mock;
 
-class Service
+class Service extends \ScottRobertson\Scrutiny\Service\Base
 {
-    public function getData($key)
+    public function getData($key = false)
     {
         return $key;
     }
