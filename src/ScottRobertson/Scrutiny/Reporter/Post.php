@@ -14,7 +14,7 @@ class Post extends Base
         $this->curl = curl_init($this->url);
     }
 
-    public function report($service)
+    public function report(\ScottRobertson\Scrutiny\Service\Base $service)
     {
         return $this->post(
             array(

@@ -22,7 +22,7 @@ class Pushover extends Base
         );
     }
 
-    public function report($service)
+    public function report(\ScottRobertson\Scrutiny\Service\Base $service)
     {
         $this->pushover->title = $service->getMessageFromEvent();
         $this->pushover->message = $service->getName() . ' returned ' . $service->getData('code');
