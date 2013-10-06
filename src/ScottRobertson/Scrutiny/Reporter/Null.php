@@ -9,7 +9,7 @@ class Null extends Base
         $this->subscribe($events);
     }
 
-    public function report($service)
+    public function report()
     {
         return true;
     }
