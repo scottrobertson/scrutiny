@@ -1,0 +1,8 @@
+image: bradrydzewski/php:5.4
+script:
+  - composer install
+  - phpunit
+notify:
+  email:
+    recipients:
+      - notify@scottrobertson.me
