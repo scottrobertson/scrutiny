@@ -60,7 +60,3 @@ $scrutiny->watch();
 
 ### Example Use case
 For example, if you wanted to monitor MySQL, you could setup the Pushover Reporter to subscribe to "down" events. This would mean that if MySQL went down, you would receive a push notification.
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/scottrobertson/scrutiny/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
